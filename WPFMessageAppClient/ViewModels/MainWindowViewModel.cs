@@ -78,6 +78,7 @@ namespace WPFMessageAppClient.ViewModels
             while (true)
             {
                 byte[] buffer = new byte[1024];
+
                 int received = await connectedClient.ReceiveAsync(buffer, SocketFlags.None);
                 string response = Encoding.UTF8.GetString(buffer, 0, received);
                 Chat += "Client said : " + response + "\n";
