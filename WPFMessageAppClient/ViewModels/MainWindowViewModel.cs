@@ -62,6 +62,9 @@ namespace WPFMessageAppClient.ViewModels
             }
         }
 
+        /// <summary>
+        /// Connecting to server
+        /// </summary>
         private async void ConnectToSocket()
         {
             IPAddress ipAddress = IPAddress.Parse("192.168.1.2");
@@ -73,6 +76,9 @@ namespace WPFMessageAppClient.ViewModels
             await ReceiveMessages(_socket);
         }
 
+        /// <summary>
+        /// Receiving message from server
+        /// </summary>
         private async Task ReceiveMessages(Socket connectedClient)
         {
             while (true)
@@ -86,6 +92,9 @@ namespace WPFMessageAppClient.ViewModels
             }
         }
 
+        /// <summary>
+        /// Sending message to server.
+        /// </summary>
         private async void SendMessages()
         {
             byte[] messageBytes = Encoding.UTF8.GetBytes(_messageToSend);
